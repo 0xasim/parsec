@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def vwa():
-  return 'Vulnerable web application'
+  return 'Simple vulnerable web application'
 
 """
 WHY:
@@ -12,9 +12,12 @@ WHY:
 
 COMMENTS:
   Looks like flask doesn't escape variable URLs by default.
-  https://flask.palletsprojects.com/en/1.1.x/quickstart/#variable-rules
+      https://flask.palletsprojects.com/en/1.1.x/quickstart/#variable-rules
   No need to escape  int, float, path, uuid?
-  Browser didn't help at all. Frontend framework could've helped. Flask didn't help
+  Browser didn't help at all (because X-XSS-Protection header not set)
+      https://flask.palletsprojects.com/en/1.1.x/security/#x-xss-protection 
+      https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
+  Frontend framework could've helped. Flask didn't help
 
 Exploitation:
   http://127.0.0.1:5000/xss/%3Cimg%20src=x%20onerror=%22alert(document.domain)%22%3E
