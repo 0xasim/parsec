@@ -4,4 +4,4 @@
 It contains both vulnerable and secure endpoints of each vulnerability to model the behaviour of both classes.
 
 
-Description and methods of exploitation are written as comments before route declaration.
+Description and exploitation methods are written as comments before each route declaration.
