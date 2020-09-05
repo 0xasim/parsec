@@ -3,7 +3,7 @@ from markupsafe import escape
 app = Flask(__name__)
 
 @app.route('/')
-def hell_world():
+def vwa():
   return 'Vulnerable web application'
 
 """
@@ -33,3 +33,5 @@ Can be prevented by simply escaping value using escape function in markupsafe mo
 @app.route('/noxss/<value>')
 def noXss(value):
   return f'value is {escape(value)}'
+
+
